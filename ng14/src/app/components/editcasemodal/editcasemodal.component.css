@@ -1,0 +1,35 @@
+.mat-typography{
+    padding-top: 5px;
+    width: 1300px;
+    height: 700px;
+}
+
+.btn-create{
+    background-color: rgb(135, 200, 135);
+    color: aliceblue;
+}
+
+.example-full-width-data {
+    width: 250px;
+    padding-left: 40px;
+    padding-top: 25px;
+}
+
+::ng-deep .mat-form-field-underline {
+    display: fill;
+}
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  

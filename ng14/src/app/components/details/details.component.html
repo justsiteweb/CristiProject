@@ -1,0 +1,162 @@
+<div class="container">
+    <div class="matpos">
+        <mat-card class="matcard">
+            <h1>{{displayData.caseName}}</h1>
+            <mat-form-field class="district">
+                <input matInput placeholder='Case Number' [value]=displayData.caseNumber readonly='true'>
+            </mat-form-field>
+
+            <mat-form-field class="creator">
+                <input matInput placeholder='Created By' [value]='creatorName +" "+ creatorSurname' readonly='true'>
+            </mat-form-field>
+        </mat-card>
+    </div>
+</div>
+
+
+<div class="matta">
+    <mat-tab-group mat-align-tabs="left">
+        <mat-tab label="Details">
+            <mat-card class="matcardDetails">
+                <mat-card class="matcard2">
+                    <h2>Details:</h2>
+                </mat-card>
+
+                <hr>
+                <div class="firstRow">
+
+                    <mat-form-field class="venueType">
+                        <input matInput placeholder='Venue Type' [value]=venueTypeName readonly='true'>
+                    </mat-form-field>
+
+
+                    <mat-form-field class="district">
+                        <input matInput placeholder='District' [value]=districtName readonly='true'>
+                    </mat-form-field>
+
+                    <mat-form-field class="localCounsel">
+                        <input matInput placeholder='Local Counsel' [value]=displayData.localCounsel readonly="true">
+                    </mat-form-field>
+
+                    <mat-form-field class="aorPHV">
+                        <input matInput placeholder='AOR-PHV' [value]=displayData.aorPHV readonly="true">
+                    </mat-form-field>
+
+
+                    <mat-form-field class="opposingAttorney">
+                        <input matInput placeholder='Opposing Attorney' [value]=displayData.opposingAttorney
+                            readonly="true">
+                    </mat-form-field>
+
+                </div>
+                <div class="secondRow">
+
+                    <mat-form-field class="jurisdiction">
+                        <input matInput placeholder='Jurisdiction' [value]=jurisdictionName readonly='true'>
+                    </mat-form-field>
+
+                    <mat-form-field class="districtJudgeName">
+                        <input matInput placeholder='District Judge' [value]=districtJudgeName readonly='true'>
+                    </mat-form-field>
+
+
+                    <mat-form-field class="caseManager">
+                        <input matInput placeholder='Case Manager' [value]=displayData.caseManager readonly='true'>
+                    </mat-form-field>
+
+
+                    <mat-form-field class="defendantName">
+                        <input matInput placeholder='Defendant Name' [value]=displayData.defendantName readonly='true'>
+                    </mat-form-field>
+
+                    <mat-form-field class="defendantAbbreviation">
+                        <input matInput placeholder='Defendant Abbreviation' [value]=displayData.defendantAbbreviation
+                            readonly='true'>
+                    </mat-form-field>
+
+
+
+                </div>
+
+                <div>
+
+                    <mat-form-field class="denialType">
+                        <input matInput placeholder='Denial Type' [value]=denialTypeName>
+                    </mat-form-field>
+
+                    <mat-form-field class="magistrateJudgeName">
+                        <input matInput placeholder='Magistrate Judge' [value]=magistrateJudgeName readonly='true'>
+                    </mat-form-field>
+
+                    <mat-form-field class="clientName">
+                        <input matInput placeholder='Client Name' [value]=displayData.clientName readonly='true'>
+                    </mat-form-field>
+
+
+                    <mat-form-field class="createdOn">
+                        <input matInput placeholder='Created On' [value]=displayData.createdOn readonly='true'>
+                    </mat-form-field>
+                </div>
+
+                <div>
+                    <mat-form-field class="violation" provideReadonly floatLabel="never">
+                        <input matInput placeholder="Violation" readonly="true" value="">
+                        <mat-list *ngFor="let vio of violationNames">
+                            {{vio}}
+                        </mat-list>
+                    </mat-form-field>
+                </div>
+
+
+
+
+
+
+
+                <!-- <mat-form-field class="violation">
+                    <input matInput placeholder="Violation" *ngFor="let vio of violationNames" [value]=vio readonly='true'>
+                </mat-form-field> -->
+                <!-- <div>
+                    <mat-label>Leave a comment</mat-label>
+                    <table class="violation">
+                        <tr *ngFor="let notes of violationNames">
+                            <td>{{notes}}</td>
+                        </tr>
+                    </table>
+                </div> -->
+
+
+
+
+            </mat-card>
+        </mat-tab>
+
+
+
+
+
+
+
+
+
+
+        <mat-tab label="Documents">
+
+            Documents Content
+
+
+        </mat-tab>
+
+    </mat-tab-group>
+</div>
+
+<br>
+
+
+
+
+
+<!-- <div class="container2">
+    <img src="assets/images/gray.jpg"  class="img2">
+    <div class="details"><h1>Details: </h1></div>
+</div> -->

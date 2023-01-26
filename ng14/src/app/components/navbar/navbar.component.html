@@ -1,0 +1,57 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>
+      <img class="stylelogo" src="assets\images\hux.png" width="145" height='60' style="padding-left:5px; padding-top: 10px;" priority>
+    </mat-toolbar>
+    <mat-nav-list>
+      <a class="item-mat" mat-list-item routerLinkActive="null">
+        <mat-icon matListIcon>account_circle</mat-icon>
+        Profile
+      </a>
+      <a class="item-mat" mat-list-item routerLinkActive="null">
+        <mat-icon matListIcon>home</mat-icon>
+        Home
+      </a>
+      <a class="item-mat" mat-list-item routerLink="./caselist" routerLinkActive="active">
+        <mat-icon matListIcon>list</mat-icon>
+        Case List
+      </a>
+      <a class="item-mat" mat-list-item routerLink="./judgelist" routerLinkActive="active">
+        <mat-icon matListIcon>list</mat-icon>
+        Judge List
+      </a>
+      <a class="item-mat" mat-list-item routerLinkActive="null">
+        <mat-icon matListIcon>list</mat-icon>
+        Attorney List
+      </a>
+      <a class="item-mat" mat-list-item routerLinkActive="null">
+        <mat-icon matListIcon>group</mat-icon>
+        Management
+      </a>
+      <a class="item-mat" mat-list-item routerLinkActive="null">
+        <mat-icon matListIcon>settings</mat-icon>
+        Settings
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <!-- <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button> -->
+      <span>Platform admin center</span>
+      <!-- <span class="username">As: {{user.name}} {{user.surname}}</span> -->
+
+      <!-- <img src="assets\images\icon2profile.png" width="50" height='50' priority> -->
+    </mat-toolbar>
+    <!-- Add Content Here -->
+
+    <router-outlet></router-outlet>
+
+    <!-- <app-dashboard></app-dashboard> -->
+
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

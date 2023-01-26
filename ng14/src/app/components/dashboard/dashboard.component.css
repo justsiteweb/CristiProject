@@ -1,0 +1,56 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.example-full-width {
+    width: 250px;
+    padding-left: 40px;
+    padding-top: 25px;
+}
+
+.mat-select-panel {
+    max-height: calc(48px * 10);
+  }
+
+
+.test1 {
+    padding: 25px;
+}
+
+.submit-button {
+    background-color: #40c045;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+}
+
+
+.panel-data{
+    padding: 25px;
+}
+
+.container-align{
+    padding-left: 80px;
+    width: 1100px;
+}
+
+.example-headers-align {
+    border-left: 30px;
+}
+
+.example-headers-align .mat-expansion-panel-header-description {
+    padding: 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+.example-full-width-data {
+    width: 250px;
+    padding-left: 40px;
+    padding-top: 25px;
+}

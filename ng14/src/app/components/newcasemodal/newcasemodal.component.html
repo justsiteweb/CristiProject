@@ -1,0 +1,229 @@
+ 
+<form>
+<h2 mat-dialog-title >New Case</h2>
+<hr style="width:100%;text-align:left;margin-left:0">
+<mat-dialog-content class="mat-typography">
+    <table class="example-full-width-data" cellspacing="0">
+      <tr>
+        <td>
+
+          <mat-form-field class="example-full-width-data" appearance="fill">
+            <mat-label>District</mat-label>
+            <mat-select [formControl]="districtForm" (selectionChange)="updateJudges($event.value)" >
+              <mat-option>
+                <ngx-mat-select-search [formControl]="districtFilterCtrl" [placeholderLabel]="'Search...'"
+                  [noEntriesFoundLabel]="'Not Found...'"></ngx-mat-select-search>
+              </mat-option>
+              <mat-option *ngFor="let district of filteredDistricts | async" [value]="district">
+                {{district.district_name}}
+              </mat-option>
+
+
+            </mat-select>
+          </mat-form-field>
+
+        </td>
+        <td>
+          <mat-form-field class="example-full-width-data" appearance="fill">
+            <mat-label>District Judge</mat-label>
+            <mat-select [formControl]="districtJudgeForm" (selectionChange)="getDistrictJudgeName($event.value)">
+              <mat-option>
+                <ngx-mat-select-search [formControl]="djudgeFilterCtrl" [placeholderLabel]="'Search...'"
+                  [noEntriesFoundLabel]="'Not Found...'"></ngx-mat-select-search>
+              </mat-option>
+              <mat-option *ngFor="let djudge of filteredDistrictJudge | async" [value]="djudge">
+                {{djudge.judge_name}}
+              </mat-option>
+            </mat-select>
+  
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-full-width-data" appearance="fill">
+            <mat-label>Magistrate Judge</mat-label>
+            <mat-select [formControl]="magistrateJudgeForm" (selectionChange)="getMagistrateJudgeName($event.value)">
+              <mat-option>
+                <ngx-mat-select-search [formControl]="mjudgeFilterCtrl" [placeholderLabel]="'Search...'"
+                  [noEntriesFoundLabel]="'Not Found...'"></ngx-mat-select-search>
+              </mat-option>
+              <mat-option *ngFor="let djudge of filteredMagistrateJudge | async" [value]="djudge">
+                {{djudge.judge_name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
+  
+  
+    <!-- second line -->
+    <table class="example-full-width-data" cellspacing="0">
+      <tr>
+        <td>
+          <mat-form-field class="example-full-width-data" appearance="fill">
+              <mat-label>Venue Type </mat-label>
+            <mat-select [formControl]="venueTypeForm"  (selectionChange)="getVenueType($event.value)">
+              <mat-option *ngFor="let venueType of venueTypeList" [value]="venueType">{{venueType.name}}</mat-option>
+              <!-- <mat-option value='139b(1)'>139b(1)</mat-option>
+              <mat-option value='139b(2)'>139b(2)</mat-option> -->
+            </mat-select>
+            <mat-error *ngIf="venueTypeForm.hasError('required')">
+              Venue Type is <strong>required</strong>
+               </mat-error>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-full-width-data" appearance="fill">
+            <mat-label>Jurisdiction</mat-label>
+            <mat-select [formControl]="jurisdictionForm" (selectionChange)="getJurisdiction($event.value)">
+              <mat-option *ngFor="let jurisdiction of jurisdictionList " [value]="jurisdiction">{{jurisdiction.name}}</mat-option>
+              <!-- <mat-option value='Regular'>Regular</mat-option>
+              <mat-option value='Regular + Supplimental'>Regular + Supplimental</mat-option> -->
+            </mat-select>
+            <mat-error *ngIf="jurisdictionForm.hasError('required')">
+             Jurisdiction is <strong>required</strong>
+              </mat-error>
+          </mat-form-field>
+        </td>
+  
+        <td>
+          <mat-form-field class="example-full-width-data" appearance="fill">
+            <mat-label>Denial Type</mat-label>
+            <mat-select [formControl]="denialTypeForm" (selectionChange)="getDenialType($event.value)">
+              <mat-option *ngFor="let denialType of denialTypeList " [value]="denialType">{{denialType.name}}</mat-option>
+              <!-- <mat-option value='House Rental Denial'>House Rental Denial</mat-option>
+              <mat-option value='Employment Denial'>Employment Denial</mat-option>
+              <mat-option value='Employment Delay'>Employment Delay</mat-option>
+              <mat-option value='Job Loss'>Job Loss</mat-option>
+              <mat-option value='Credit Denial/Approval at High Interest Rate'>Credit Denial/Approval at High Interest Rate</mat-option> -->
+            </mat-select>
+            <mat-error *ngIf="denialTypeForm.hasError('required')">
+              Denial Type is <strong>required</strong>
+              </mat-error>
+          </mat-form-field>
+        </td>
+        <td>
+
+          <mat-form-field class="example-full-width-data" appearance="fill">
+            <mat-label>Violation Section</mat-label>
+            <mat-select [formControl]="violationForm" (selectionChange)="getViolation($event.value)" multiple>
+              <!-- <mat-select-trigger> {{violationForm.value?.[0] || ''}}
+                <span *ngIf="(violationForm.value?.length || 0) > 1 " class="example-additional-selection">
+                  (+{{(violationForm.value?.length || 0) - 1}} {{violationForm.value?.length === 2 ? 'other' : 'others'}})
+                </span>
+              </mat-select-trigger> -->
+              <mat-option *ngFor="let violation of violationList" [value]="violation.violation_id">{{violation.name}}</mat-option>
+            </mat-select>
+            <mat-error *ngIf="violationForm.hasError('required')">
+            Violation is <strong>required</strong>
+            </mat-error>
+            <mat-error >
+              </mat-error>
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
+    <table class="example-full-width-data" cellspacing="0">
+      <tr>
+        <td>
+          <mat-form-field class="example-full-width-data" appearance="fill">
+            <mat-label>Local Counsel</mat-label>
+            <input matInput type="text" [formControl]="localCounselForm" [(ngModel)]="localCounsel" name="localCounsel">
+            <mat-error *ngIf="localCounselForm.hasError('required')">
+              Local Counsel is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-full-width-data" appearance="fill">
+            <mat-label>AOR-PHV</mat-label>
+            <input matInput [formControl]="aorPhvForm" [(ngModel)]="aorPHV" name="aorPHV">
+            <mat-error *ngIf="aorPhvForm.hasError('required')">
+              AOR-PHV is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-full-width-data" appearance="fill">
+            <mat-label>Opposing Attorney</mat-label>
+            <input matInput [formControl]="opposingAttorneyForm" [(ngModel)]="opposingAttorney" name="opposingAttorney">
+            <mat-error *ngIf="opposingAttorneyForm.hasError('required')">
+              Opposing Attorney is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-full-width-data" appearance="fill">
+            <mat-label>Case Manager</mat-label>
+            <input matInput [formControl]="caseManagerForm" [(ngModel)]="caseManager" name="caseManager">
+            <mat-error *ngIf="caseManagerForm.hasError('required')">
+              Case Manager is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
+  
+    <table class="example-full-width-data" cellspacing="0">
+      <tr>
+        <td>
+          <mat-form-field class="example-full-width-data" appearance="fill">
+            <mat-label>Client Name</mat-label>
+            <input matInput [formControl]="clientNameForm" [(ngModel)]="clientName" name="clientName">
+            <mat-error *ngIf="clientNameForm.hasError('required')">
+              Client Name is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-full-width-data" appearance="fill">
+            <mat-label>Defendant Name</mat-label>
+            <input matInput [formControl]="defendantNameForm" [(ngModel)]="defendantName" name="defendantName">
+            <mat-error *ngIf="defendantNameForm.hasError('required')">
+              Defendant Name is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-full-width-data" appearance="fill">
+            <mat-label>Defendant Abbreviation</mat-label>
+            <input matInput [formControl]="defendantAbbreviationForm" [(ngModel)]="defendantAbbreviation" name="defendantAbbreviation">
+            <mat-error *ngIf="defendantAbbreviationForm.hasError('required')">
+              Defendant Abbreviation is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-full-width-data" appearance="fill">
+            <mat-label>Case Name</mat-label>
+            <input matInput [formControl]="caseNameForm" [(ngModel)]="caseName" name="caseName">
+            <mat-error *ngIf="caseNameForm.hasError('required')">
+              Case Name is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
+  
+    <table class="example-full-width-data" cellspacing="0">
+      <tr>
+        <td>
+          <mat-form-field class="example-full-width-data" appearance="fill">
+            <mat-label>Client Number</mat-label>
+            <input matInput [formControl]="caseNumberForm" [(ngModel)]="caseNumber" name="caseNumber">
+            <mat-error *ngIf="caseNumberForm.hasError('required')">
+              Client Number is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>  
+ 
+</mat-dialog-content>
+<hr style="width:100%;text-align:left;margin-left:0">
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button class="btn-create" mat-button [mat-dialog-close]="true"  (click)="onSubmit()" type="submit" cdkFocusInitial>Create</button>
+</mat-dialog-actions>
+
+</form>

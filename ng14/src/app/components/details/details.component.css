@@ -1,0 +1,138 @@
+
+
+
+.mat-text{
+    font-size: 20px;
+}
+
+.matcard{
+    height: 104px;
+}
+
+
+.item{
+    padding-left: 7px;
+}
+
+
+.caseNumber{
+    padding-left: 30px;
+    font-size: 20px;
+}
+
+.district{
+    padding-left: 75px;
+    font-size: 18px;
+    width: 250px;
+}
+
+.clientName{
+    padding-left: 10px;
+    font-size: 20px;
+}
+
+.matcardDetails{
+    background-color: rgb(255, 254, 254);
+    margin: 50px;
+    height: 550px;
+    width: 1200px;
+    border: primary;
+}
+
+.districtJudgeName{
+    padding-left: 75px;
+    font-size: 18px;
+}
+
+.magistrateJudgeName
+{
+    padding-left: 75px;
+    font-size: 18px;
+}
+
+
+.firstRow{
+    padding-top: 14px;
+}
+
+.venueType{
+    padding-left: 25px;
+    font-size: 18px;
+}
+
+.jurisdiction{
+    padding-left: 25px;
+    font-size: 18px;
+}
+
+.violation{
+    padding-left: 25px;
+    font-size: 18px; 
+    width: 250px;
+}
+
+.localCounsel{
+    padding-left: 45px;
+    font-size: 18px;
+}
+
+
+.caseManager{
+    padding-left: 115px;
+    font-size: 18px;
+}
+
+.clientName{
+    padding-left: 115px;
+    font-size: 18px;  
+}
+
+.aorPHV{
+    padding-left: 55px;
+    font-size: 18px;
+}
+
+
+.opposingAttorney{
+    padding-left: 25px;
+    font-size: 18px;
+}
+
+.defendantName{
+    padding-left: 55px;
+    font-size: 18px;
+}
+
+.creator{
+    padding-left: 65px;
+    font-size: 18px;
+    width: 400px;
+}
+
+.defendantAbbreviation{
+    padding-left: 25px;
+    font-size: 18px;
+}
+
+.createdOn{
+    padding-left: 55px;
+    font-size: 18px;
+    width: 300px;
+}
+
+.denialType{
+    padding-left: 25px;
+    font-size: 18px;  
+}
+
+.secondRow{
+    padding-top: 5px;
+}
+
+::ng-deep .mat-form-field-underline {
+    display: none;
+}
+
+.matcard2{
+    background-color: #f2f2f2;
+}

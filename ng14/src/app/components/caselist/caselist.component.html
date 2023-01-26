@@ -1,0 +1,63 @@
+
+
+<!-- <div class="position-btn-create-new-case">
+    <table>
+<tr>
+    <td> -->
+
+        
+<!--     
+        <mat-card class="matcard"> -->
+            <div class="matcard">
+
+                <table>
+                    <tr>
+                        <td class="position">
+                            <button mat-button  class="button-create-new-case" (click)="openDialogCreateNewCase()" >Create Case </button> 
+                        </td>
+                        <td class="position2">
+                            <button mat-button  class="button-create-view-case" [routerLink]="['/navbar/details/']" [state]="{id: 1}" (click)="allowDetailsData()" [disabled]="selectedDataStatus == false">View Case</button> 
+                        </td>
+                        <td class="position3">
+                            <button mat-button  class="button-create-new-case" [disabled]="selectedDataStatus == false" (click)="openDialogEditTheCase()">Edit Case</button> 
+                        </td>
+
+                        <td class="position3">
+                            <button mat-button  class="button-create-view-case" (click)="openDialogDeleteTheCase()" [disabled]="selectedDataStatus == false">Delete Case</button> 
+                        </td>
+                        
+                    </tr>
+                </table>
+            </div>
+ 
+        <!-- </mat-card> -->
+      
+  
+    <!-- </td> -->
+    <!-- <td class="btn-v-c-p"> -->
+        
+    <!-- </td>
+</tr>
+    </table>
+</div> -->
+
+
+<div class="grid">
+    <ag-grid-angular
+    style="
+    width: 1600px;
+    height: 700px; 
+    font-size: 14px;
+    "
+    class="ag-theme-balham"
+    [rowData]="caseList"
+    [columnDefs]="columnDefs"
+    [pagination]="true"
+    [enableCellTextSelection]="true"
+    [paginationPageSize]=22
+    rowSelection="single"
+    (cellClicked)="getSelectedRowData()"
+    (gridReady)="onGridReady($event)"
+    >
+    </ag-grid-angular>
+</div>

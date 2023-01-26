@@ -1,0 +1,105 @@
+<form>
+    <h2 mat-dialog-title>Edit Case</h2>
+    <hr style="width:100%;text-align:left;margin-left:0">
+    <mat-dialog-content class="mat-typography">
+
+
+        <!-- <mat-form-field [formGroup]="formDistrictsData" class="example-full-width-data" appearance="fill">
+            <mat-select formControlName="districtSelect" (selectionChange)="updateJudges($event.value)"  >
+                <mat-option>
+                    <ngx-mat-select-search [formControl]="inputDistrictFilter" [placeholderLabel]="'Search...'"
+                        [noEntriesFoundLabel]="'Not Found...'">
+                    </ngx-mat-select-search>
+                </mat-option>
+                <mat-option *ngFor="let data of districtsFilter | async" [value]="data">
+                    {{ data.district_name }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field> -->
+
+        <!-- <form [formGroup]="formGroup">
+            <mat-form-field>
+              <mat-label>
+                Employee
+              </mat-label>
+              <input formControlName="employee" matInput type="text" [matAutocomplete]="auto" />
+              <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let item of filteredOptions" [value]="item">
+                  {{item}}
+                </mat-option>
+              </mat-autocomplete>
+            </mat-form-field>
+          </form> -->
+
+        <!-- <mat-form-field [formGroup]="formDistrictJudgeData"  class="example-full-width-data" appearance="fill">
+            <mat-label>District Judge</mat-label>
+            <mat-select formControlName="districtJudgeSelect">
+              <mat-option>
+                <ngx-mat-select-search [formControl]="districtJudgeFilterCtrl" [placeholderLabel]="'Search...'"
+                  [noEntriesFoundLabel]="'Not Found...'"></ngx-mat-select-search>
+              </mat-option>
+              <mat-option *ngFor="let djudge of filteredDistrictJudge | async" [value]="djudge">
+                {{djudge.judge_name}}
+              </mat-option>
+            </mat-select>
+        </mat-form-field> -->
+<!-- 
+        <mat-form-field *ngIf="districtJudgeDataSource !== undefined" [formGroup]="formDistrictJudgeData" class="example-full-width-data" appearance="fill">
+            <mat-select formControlName="districtJudgeSelect"  >
+                <mat-option>
+                    <ngx-mat-select-search [formControl]="inputDistrictJudgeFilter" [placeholderLabel]="'Search...'"
+                        [noEntriesFoundLabel]="'Not Found...'">
+                    </ngx-mat-select-search>
+                </mat-option>
+                <mat-option *ngFor="let data of districtJugdeFilter | async" [value]="data">
+                    {{ data.district_name }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field> -->
+
+
+
+        
+<!-- 
+        <mat-form-field [formGroup]="formDistrictsJudgeData" class="example-full-width-data" appearance="fill">
+            <mat-select formControlName="districtJudgeSelect" >
+                <mat-option>
+                    <ngx-mat-select-search [formControl]="inputJudgeFilter" [placeholderLabel]="'Search...'"
+                        [noEntriesFoundLabel]="'Not Found...'">
+                    </ngx-mat-select-search>
+                </mat-option>
+                <mat-option *ngFor="let data of filteredDistrictJudge | async" [value]="data">
+                    {{ data.judge_name}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field> -->
+
+    
+<!-- 
+        <mat-form-field [formGroup]="formData" class="example-full-width-data" appearance="fill">
+            <mat-select formControlName="valueSelect">
+                <mat-option>
+                    <ngx-mat-select-search [formControl]="inputFilter" [placeholderLabel]="'Search...'"
+                        [noEntriesFoundLabel]="'Not Found...'">
+                    </ngx-mat-select-search>
+                </mat-option>
+                <mat-option *ngFor="let data of controlFilter | async" [value]="data">
+                    {{ data[dataDistrictName] }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field> -->
+
+
+        
+
+
+
+    </mat-dialog-content>
+    <hr style="width:100%;text-align:left;margin-left:0">
+    <mat-dialog-actions align="end">
+        <button mat-button mat-dialog-close>Cancel</button>
+        <button class="btn-create" mat-button [mat-dialog-close]="true" type="submit" (click)="onSubmit()" type="submit"
+            cdkFocusInitial>Edit</button>
+    </mat-dialog-actions>
+
+</form>
